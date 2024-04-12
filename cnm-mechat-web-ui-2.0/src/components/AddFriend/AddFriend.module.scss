@@ -1,0 +1,117 @@
+.add-phoneNumber {
+    margin-top: 20px;
+    //    border-bottom : solid 0.5px #D3D3D3;
+}
+.add-phoneNumber input {
+    display: inline-block;
+    width: 80%;
+    height: 25px;
+    border: 0;
+    outline: 0;
+    margin-left: 10%;
+    font-size: 1.5rem;
+    background: transparent;
+    font-weight: bold;
+    font-family: var(--font-family);
+    transition: border-color 0.2s;
+    border-bottom: solid 0.5px #d3d3d3;
+    &:hover {
+        opacity: 0.6;
+        font-weight: bold;
+        color: black;
+        font-family: var(--font-family);
+        border-bottom: solid 1px #0000ff;
+    }
+}
+.clear-btn1 {
+    position: absolute;
+    font-size: 1.2rem;
+    right: 10%;
+    border: none;
+    outline: none;
+    color: var(--text-opacity);
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+        color: var(--primary);
+    }
+}
+//add
+.list-conversation {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--grey-400);
+        transition: background-color ease-in-out 200ms;
+    }
+}
+// Avatar
+.avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.username {
+    font-size: 1.6rem;
+    margin-top: -6px;
+}
+.message {
+    font-size: 1.4rem;
+    margin-top: 6px;
+}
+.result-add-friend button {
+    padding: 10px;
+    border: 0;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: var(--white);
+    &:hover {
+        cursor: pointer;
+    }
+}
+.result-friend p {
+    font-size: 14px;
+    height: 30px;
+    width: 80px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: var(--font-family);
+}
+.tam {
+    height: 80px;
+}
+.add-friend-bottom {
+    height: 60px;
+    margin-top: 180px;
+}
+.bottom-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search, .cancel {
+    padding: 10px;
+    margin: 0px 10px;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    outline: none;
+
+    &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+    }
+}

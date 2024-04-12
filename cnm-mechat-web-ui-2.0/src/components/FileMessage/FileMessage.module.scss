@@ -1,0 +1,81 @@
+.files {
+    display: flex;
+    align-items: center;
+    margin: 0 16px;
+    margin-top: 4px;
+}
+
+.img-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.name-file {
+    margin-left: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.size {
+    margin-left: 10px;
+    margin-top: 4px;
+    font-size: 1.1rem;
+    color: var(--text-opacity);
+}
+
+.download-file {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--text);
+}
+
+.preview-file {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.model-preview {
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    z-index: 9999px;
+}
+
+.model-preview-file {
+    overflow-y: scroll;
+}
+
+.close-btn {
+    position: fixed;
+    top: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+    background-color: transparent;
+}
+
+.close-icon {
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+        color: var(--primary);
+    }
+}
+
+.preview-file {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}

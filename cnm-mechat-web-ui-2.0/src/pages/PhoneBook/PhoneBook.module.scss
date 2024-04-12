@@ -1,0 +1,210 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+.container {
+    display: flex;
+    flex: 9; // 6.5 2.5
+}
+.wrapper-center {
+    flex: 2.7;
+    border-right: solid 0.5px #d3d3d3;
+}
+.wrapper-rightBar {
+    flex: 9;
+    width: 100%;
+    background-color: #e8e8e8;
+}
+//them ban
+.model-add-friend {
+    width: 352px;
+    height: 440px;
+}
+.model-add-friend-bg {
+    background-color: var(--white);
+    border-radius: 6px;
+    height: 420px;
+}
+.add-friend-title-model {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+    border-bottom: solid 0.5px #d3d3d3;
+}
+
+.friend-title {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+.close-btn {
+    background-color: transparent;
+    border: none;
+}
+.friend-close-ic {
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+// Search info
+.search-info {
+    display: flex;
+    align-items: center;
+}
+
+// Items (add friend, create group)
+.items {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-top: 10px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.item {
+    margin-right: 12px;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+.add-friend {
+    display: flex;
+    margin-top: 10px;
+    line-height: 50%;
+    height: 50px;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+        background-color: var(--bg-message);
+        color: black;
+    }
+}
+.add-friend .item {
+    align-items: center;
+    font-size: 30px;
+    color: var(--primary);
+    margin-top: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.add-friend h2 {
+    font-size: 16px;
+    margin-top: 21px;
+    margin-left: -5px;
+
+    font-family: var(--font-family);
+}
+.list-add-friend {
+    display: flex;
+    height: 70px;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+        background-color: var(--bg-message);
+        color: black;
+    }
+}
+.list-add-friend .list-add-friend-image {
+    height: 45px;
+    width: 45px;
+    margin-top: 11px;
+    margin-left: 10px;
+}
+.list-add-friend .list-add-friend-title {
+    margin-top: 24px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    margin-left: 10px;
+}
+.list-friend {
+    border-top: solid 0.5px #d3d3d3;
+}
+.list-friend h1 {
+    font-family: var(--font-family);
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+// add scrollbar
+.conversations {
+    height: calc(100vh - 270px);
+    overflow-y: scroll;
+    overflow-y: overlay;
+}
+
+///Rightbar--------------------------------------------
+
+.wrapper-rightBar .header {
+    height: 70px;
+    border-bottom: solid 0.5px #d3d3d3;
+    background-color: white;
+}
+.list-add-friend .list-add-friend-title2 {
+    margin-top: 20px;
+    font-family: var(--font-family);
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.list-BoxChat {
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+}
+.list-BoxChat::-webkit-scrollbar-thumb {
+    background-color: rgb(150, 147, 147);
+}
+.list-BoxChat h1 {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: -10px;
+}
+//@at-root
+.list-FriendRequest {
+    height: 500px;
+    //overflow-y: scroll;
+}
+
+//@at-root
+.friendRequest {
+    height: calc(56vh - 80px);
+    border-bottom: solid 0.5px #d3d3d3;
+    overflow-y: scroll;
+}
+.friendRequest::-webkit-scrollbar-thumb {
+    background-color: rgb(150, 147, 147);
+}
+.friendRequest h1 {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: -10px;
+}
+//@at-root
+.meRequestFriend {
+    height: calc(56vh - 80px);
+    overflow-y: scroll;
+}
+.meRequestFriend::-webkit-scrollbar-thumb {
+    background-color: rgb(150, 147, 147);
+}
+.meRequestFriend h1 {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: -10px;
+}

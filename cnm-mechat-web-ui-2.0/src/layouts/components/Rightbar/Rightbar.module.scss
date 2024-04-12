@@ -1,0 +1,45 @@
+.wrapper {
+    flex: 9;
+    width: 100%;
+}
+
+// Container (messenger and conversation info)
+.container {
+    display: flex;
+    flex: 9; // 6.5 2.5
+}
+
+// Container messages
+.container-messages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    cursor: default;
+}
+
+// Intro
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    height: 85%;
+}
+
+.title {
+    align-items: center;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+// Image logo
+.logo-img {
+    width: 90%;
+    margin-top: 20px;
+}

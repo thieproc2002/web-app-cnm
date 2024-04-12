@@ -1,0 +1,48 @@
+.wrapper {
+    flex: 2.7;
+}
+
+// Search info
+.search-info {
+    display: flex;
+    align-items: center;
+}
+
+.separator {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 8px;
+    margin-top: 20px;
+}
+
+// Conversations
+.conversations {
+    margin-top: 6px;
+    top: 80px;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+    overflow-y: overlay;
+}
+
+// Scrollbar Css
+::-webkit-scrollbar {
+    border-radius: 0;
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+    // background-color: red;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+    
+}
+
+.conversation-none {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}

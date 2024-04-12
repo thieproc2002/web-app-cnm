@@ -1,0 +1,188 @@
+.container-conversation {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+
+    &:hover {
+        .time,
+        .badge {
+            display: none;
+        }
+
+        .option-remove-conversation {
+            display: block;
+            z-index: 9999;
+        }
+    }
+}
+
+// List conversation
+.list-conversation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--grey-400);
+        transition: background-color ease-in-out 200ms;
+
+        .time,
+        .badge {
+            display: none;
+        }
+
+        .option-remove-conversation {
+            display: block;
+            z-index: 9999;
+        }
+    }
+}
+
+.tippy-remove-conversation {
+    z-index: 9999;
+}
+
+.popper-remove-conversation {
+    width: 160px;
+    z-index: 9999;
+}
+
+.btn-remove {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    z-index: 9999;
+
+    &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+    }
+}
+
+.option-remove-conversation {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    border: none;
+    outline: none;
+    display: none;
+    background-color: transparent;
+    z-index: 9999;
+}
+
+.option-del {
+    margin-right: 6px;
+    z-index: 9999;
+}
+
+// Avatar
+.avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+// Content message
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 12px;
+}
+
+.username {
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0 0 4px 0;
+}
+
+.message {
+    font-size: 1.4rem;
+    flex: 1;
+}
+
+// Show notification and time
+.notification {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.time {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    flex: 1;
+}
+
+.badge {
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 4px;
+    color: var(--white);
+    background-color: var(--red);
+}
+.item {
+    font-size: 20px;
+}
+//@at-root phone book
+.own-menu-list-children {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+}
+.deleteFriend {
+    color: black;
+    font-size: 1.4rem;
+    font-family: var(--font-family);
+    border-bottom: solid 0.5px #d3d3d3;
+    border-top: solid 0.5px #d3d3d3;
+}
+.item-btn {
+    text-align: left;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+        transition: background-color ease-in-out 200ms;
+        background-color: var(--grey-400);
+    }
+}
+.key-leader {
+    position: relative;
+}
+.icon-camera {
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--primary);
+    bottom: -26px;
+    right: 34px;
+    cursor: pointer;
+}
+.option-avatar {
+    display: flex;
+    align-items: center;
+}
+.button-addFriend button {
+    font-size: 1.2rem;
+    padding: 10px;
+    border: 0;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: var(--primary);
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+        background-color: var(--primary);
+    }
+}

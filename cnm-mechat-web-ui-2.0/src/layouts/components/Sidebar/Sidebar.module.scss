@@ -1,0 +1,77 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0.3;
+    padding: 10px;
+    background-color: var(--primary);
+    height: 100vh;
+    position: relative;
+}
+
+// Sidebar top
+.avatar-img {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.option-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    position: relative;
+}
+
+.option-item {
+    font-size: 2.6rem;
+    padding: 10px;
+    color: var(--not-active);
+
+    cursor: pointer;
+
+    &.active {
+        color: var(--white);
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.sidebar-bottom .option-item {
+    margin-top: 8px;
+}
+// Notification message
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--red);
+    color: var(--white);
+    cursor: pointer;
+}
+
+// Sidebar bottom
+.sidebar-bottom {
+    position: absolute;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+// Tippy tool tip
+.tool-tip {
+    font-size: 1rem;
+}

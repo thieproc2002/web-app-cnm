@@ -1,0 +1,107 @@
+.body-login {
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 50%;
+}
+.wrapper {
+    height: 750px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+.login-title {
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+}
+.otp-form {
+    margin-top: 10px;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+.form-otp {
+    display: flex;
+    padding-top: 35px;
+    margin-left: 10%;
+    width: 80%;
+    border-bottom: solid 0.5px #d3d3d3;
+}
+.otp-form input {
+    display: inline-block;
+    width: 92%;
+    height: 25px;
+    border: 0;
+    outline: 0;
+    font-size: 1.5rem;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form-otp p {
+    font-size: 1.5rem;
+    font-family: var(--font-family);
+    font-weight: bold;
+}
+.form-button-otp {
+    display: flex;
+}
+.form-resend-code {
+    margin-top: 40px;
+    margin-left: 15%;
+    cursor: pointer;
+    color: #a9a9a9;
+    font-size: 1.5rem;
+}
+.form-button-otp button {
+    margin-top: 30px;
+    margin-left: 25%;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    border: 0;
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--primary);
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.form-back {
+    display: flex;
+    padding-top: 30px;
+    font-size: 16px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.form-back .item {
+    font-size: 40px;
+}
+.form-back .back {
+    margin-top: 10px;
+    margin-left: -10px;
+    text-decoration: none;
+}

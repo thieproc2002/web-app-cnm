@@ -1,0 +1,41 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@200;300;400;500;600;700&display=swap');
+
+// init var
+:root {
+    // color
+    --primary: #0091ff;
+    --B60: #0068ff;
+    --text: #001a33;
+    --text-opacity: #161823bf;
+    --white: #ffffff;
+    --red: #db342e;
+    --grey-400: #e8eaef;
+    --not-active: #bdb9b9;
+    --bg-message: #e5efff;
+    --bg-action: hsla(0,0%,100%,0.5);
+    --border: #e5e7eb;
+    --status-online: #15a85f;
+
+    // font-family
+    --font-family: 'Barlow', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+// default
+body {
+    font-family: var(--font-family);
+    color: var(--text);
+    overflow-y: overlay;
+    overflow-x: overlay;
+}

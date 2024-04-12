@@ -1,0 +1,137 @@
+// Popper parent
+.menu-popper {
+    width: 280px;
+}
+
+// Popper menu sub file
+.menu-popper-sub-file {
+    width: 110px;
+}
+
+// Popper menu sub language
+.menu-popper-sub-language {
+    width: 102px;
+}
+
+// Popper menu sub language
+.menu-popper-sub-intro {
+    width: 170px;
+}
+
+// Popper icon setting
+.setting-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-option {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+
+    .icon-right {
+        position: absolute;
+        right: 0;
+    }
+
+    &:hover {
+        background-color: var(--grey-400);
+    }
+}
+
+.setting-item-btn {
+    text-align: left;
+    background-color: transparent;
+    color: var(--text);
+    font-size: 1.4rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.setting-icon {
+    color: var(--not-active);
+    font-size: 1.4rem;
+    margin-right: 8px;
+}
+
+// Model intro version
+.model-intro, .model-report {
+    width: 400px;
+    height: 200px;
+}
+
+.model-intro-body {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    padding: 16px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: var(--white);
+}
+
+.info-desc-title {
+    font-weight: 700;
+}
+
+.info-desc-line {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.info-title {
+    width: 83px;
+    color: var(--text-opacity);
+}
+
+.model-intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: var(--B60);
+}
+
+.model-intro-header-name {
+    color: var(--white);
+}
+
+.model-intro-header-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+// hr
+.separator {
+    height: 0.5px;
+    background-color: var(--border);
+    margin: 4px 8px;
+}
+
+// body
+.setting-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--grey-400);
+    }
+}
+
+// footer
+.footer .setting-option .setting-item-btn {
+    color: red;
+}

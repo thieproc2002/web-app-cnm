@@ -1,0 +1,227 @@
+.body-register {
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 16px;
+    bottom: 0;
+    margin: auto;
+}
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 50%;
+}
+.login-title {
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+}
+.register-form {
+    margin-top: 20px;
+    width: 100%;
+    height: 380px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+.form-phoneNumber {
+    display: flex;
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+    border-bottom: solid 0.5px #d3d3d3;
+    //  padding-top: 50px;
+    margin-top: 80px;
+}
+.register-form .item {
+    font-size: 25px;
+}
+.register-form input {
+    width: 75%;
+    height: 25px;
+    margin-left: 8%;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    font-size: 1.7rem;
+    font-family: var(--font-family);
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.item-check {
+    outline: 0;
+    border: 0;
+    color: Green;
+    margin-top: 5px;
+}
+
+.form-user {
+    display: flex;
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+    border-bottom: solid 0.5px #d3d3d3;
+    margin-top: 20px;
+}
+.form-password {
+    display: flex;
+    width: 70%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 15%;
+    border-bottom: solid 0.5px #d3d3d3;
+}
+.form-button button {
+    margin-left: 15%;
+    width: 70%;
+    height: 40px;
+    background-color: var(--primary);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    border: 0;
+    font-size: 1.8rem;
+    color: var(--white);
+    background-color: var(--primary);
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.form-back {
+    display: flex;
+    padding-top: 10px;
+    font-size: 16px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.form-back .item-back {
+    font-size: 40px;
+}
+.form-back .back {
+    margin-top: 10px;
+    text-decoration: none;
+    margin-left: -10px;
+}
+
+//-----------------loi
+.error {
+    color: red;
+    font-size: 1.5rem;
+    margin-left: 15%;
+    margin-top: 5px;
+
+    font-family: var(--font-family);
+}
+.error p {
+    text-align: left;
+    color: red;
+    font-size: 1.5rem;
+    margin-left: 15%;
+    margin-top: -15px;
+    width: 70%;
+    font-family: var(--font-family);
+}
+
+//----
+.policy {
+    display: flex;
+    margin-left: 8%;
+}
+.policy input {
+    width: 15px;
+    height: 15px;
+}
+.policy p {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    font-family: var(--font-family);
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+.model-add-friend {
+    width: 850px;
+    height: 440px;
+}
+.model-add-group-bg {
+    background-color: var(--white);
+    border-radius: 10px;
+    height: 700px;
+    width: 800px;
+    margin-top: -130px;
+}
+.add-friend-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: solid 0.5px #d3d3d3;
+}
+.friend-title {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+.close-btn {
+    background-color: transparent;
+    border: none;
+    left: 770px;
+    top: -110px;
+}
+.friend-close-ic {
+    font-size: 2rem;
+
+    margin-top: -500px;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+.content-polyci {
+    font-family: var(--font-family);
+}
+.content-polyci p {
+    font-size: 1.5rem;
+    font-weight: 450;
+    padding: 10px;
+}
+.content-polyci h4 {
+    font-size: 2rem;
+    padding: 10px;
+}
+.content-polyci-title {
+    font-size: 3rem;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}

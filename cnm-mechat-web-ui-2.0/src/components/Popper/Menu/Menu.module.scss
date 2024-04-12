@@ -1,0 +1,47 @@
+// Menu
+.menu-avatar .menu-popper {
+    width: 280px;
+
+    // Menu item
+    .fullname {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-left: 10px;
+        margin-bottom: 8px;
+    }
+}
+
+
+// body
+.body-inner {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    margin-left: 4px;
+}
+
+.item-btn {
+    text-align: left;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--grey-400);
+    }
+}
+
+.separator {
+    height: 0.5px;
+    background: var(--border);
+    margin: 4px 8px;
+}
+
+// footer
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+}

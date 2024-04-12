@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+}
+
+.avatar-image {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+// status online user
+.status {
+    position: relative;
+}
+
+.avatar-image-status-online {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+} 
+
+.badge {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    bottom: 0;
+    right: 12px;
+    background-color: var(--status-online);
+}
+
+.info {
+    flex: 1;
+    line-height: 18px;
+}
+
+.username {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.time-online {
+    font-size: 1.1rem;
+    color: var(--text-opacity);
+}

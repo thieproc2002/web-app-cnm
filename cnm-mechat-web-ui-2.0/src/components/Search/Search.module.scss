@@ -1,0 +1,266 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex: 2.7; //1
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+//them ban
+.model-add-friend {
+    width: 352px;
+    height: 440px;
+}
+.model-add-friend-bg {
+    background-color: var(--white);
+    border-radius: 6px;
+    height: 420px;
+}
+.model-add-group-bg {
+    background-color: var(--white);
+    border-radius: 6px;
+    height: 700px;
+    width: 500px;
+    margin-top: -130px;
+}
+.add-friend-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+    border-bottom: solid 0.5px #d3d3d3;
+}
+
+.friend-title {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+.close-btn {
+    background-color: transparent;
+    border: none;
+}
+.friend-close-ic {
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+.add-phoneNumber {
+    margin-top: 20px;
+    //    border-bottom : solid 0.5px #D3D3D3;
+}
+.add-phoneNumber input {
+    display: inline-block;
+    width: 80%;
+    height: 25px;
+    border: 0;
+    outline: 0;
+    margin-left: 10%;
+    font-size: 1.5rem;
+    background: transparent;
+    font-weight: bold;
+    font-family: var(--font-family);
+    transition: border-color 0.2s;
+    border-bottom: solid 0.5px #d3d3d3;
+    &:hover {
+        opacity: 0.6;
+        font-weight: bold;
+        color: black;
+        font-family: var(--font-family);
+        border-bottom: solid 1px #0000ff;
+    }
+}
+.clear-btn1 {
+    position: absolute;
+    font-size: 1.2rem;
+    right: 10%;
+    border: none;
+    outline: none;
+    color: var(--text-opacity);
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+        color: var(--primary);
+    }
+}
+// search
+.search {
+    display: flex;
+    align-items: center;
+    flex: 2.7; //1
+    margin-right: 2px;
+    position: relative;
+}
+
+// icon search
+.icon-search {
+    position: absolute;
+    left: 0;
+    padding: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+// input search
+.input-search {
+    display: flex;
+    flex: 1.7; //1
+    padding: 6px;
+    padding-left: 26px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: 1px solid var(--grey-400);
+    background-color: var(--grey-400);
+
+    &:focus {
+        border: 1px solid var(--primary);
+        outline: none;
+        background-color: transparent;
+    }
+}
+
+// clear button
+.clear-btn,
+.loading-icon {
+    position: absolute;
+    right: 84px;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    color: var(--text-opacity);
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+        color: var(--primary);
+    }
+}
+
+// icon loading
+.loading-icon {
+    cursor: default;
+    animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.items {
+    display: flex;
+    // flex: 1; //
+    align-items: center;
+    font-size: 1.4rem;
+    margin-left: 12px;
+}
+
+.item {
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+// Menu list search
+.menu-list-search {
+    width: 328px;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    overflow-y: overlay;
+}
+
+.menu-search-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+// Button close result search
+.close-result-search-btn {
+    border: none;
+    outline: none;
+    padding: 6px;
+    margin-left: 10px;
+    margin-right: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+        border-radius: 4px;
+        background-color: var(--grey-400);
+    }
+}
+
+// Tippy tool tip
+.tool-tip {
+    font-size: 1rem;
+}
+
+.btn-click-icon {
+    border: none;
+    outline: none;
+    margin-right: 16px;
+    background-color: transparent;
+    cursor: pointer;
+}
+//@at-root
+.avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.username {
+    font-size: 1.6rem;
+    margin-top: 6px;
+}
+.message {
+    font-size: 1.4rem;
+    margin-top: 6px;
+}
+.list-conversation {
+    display: flex;
+}
+.result-add-friend button {
+    padding: 10px;
+    border: 0;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: var(--white);
+    &:hover {
+        cursor: pointer;
+    }
+}
+.result-friend p {
+    font-size: 14px;
+    height: 30px;
+    width: 80px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: var(--font-family);
+}

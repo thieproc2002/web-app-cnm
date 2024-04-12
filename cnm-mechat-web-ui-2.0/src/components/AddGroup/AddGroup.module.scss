@@ -1,0 +1,244 @@
+.add-Group {
+    margin-top: 20px;
+    //    border-bottom : solid 0.5px #D3D3D3;
+    display: flex;
+}
+.add-Group input {
+    display: inline-block;
+    width: 62%;
+    height: 25px;
+    border: 0;
+    outline: 0;
+    margin-left: 5%;
+    font-size: 1.5rem;
+    background: transparent;
+    font-weight: bold;
+    font-family: var(--font-family);
+    transition: border-color 0.2s;
+    border-bottom: solid 0.5px #d3d3d3;
+    &:hover {
+        opacity: 0.6;
+        font-weight: bold;
+        color: black;
+        font-family: var(--font-family);
+        border-bottom: solid 1px #0000ff;
+    }
+}
+.add-Group label {
+    font-weight: bold;
+    font-family: var(--font-family);
+    font-size: 1.8rem;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.clear-btn1 {
+    position: absolute;
+    font-size: 1.2rem;
+    left: 130%;
+    border: none;
+    outline: none;
+    color: var(--text-opacity);
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.6;
+        color: var(--primary);
+    }
+}
+
+//
+.search {
+    display: flex;
+    align-items: center;
+    flex: 2.7; //1
+    margin-right: 3px;
+    position: relative;
+    margin-left: 4%;
+}
+
+.btn-add-group {
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    color: var(--white);
+    background-color: var(--primary);
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.btn-cancel-group {
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+// icon search
+.icon-search {
+    position: absolute;
+    left: 0;
+    padding: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 5px;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+// input search
+.input-search {
+    display: flex;
+    width: 470px;
+    padding: 6px;
+    padding-left: 26px;
+    border-radius: 20px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    border: 1px solid var(--grey-400);
+    background-color: var(--grey-400);
+    margin-bottom: 5px;
+    &:focus {
+        border: 1px solid var(--primary);
+        outline: none;
+        background-color: transparent;
+    }
+}
+.title-add-Group {
+    margin-top: 15px;
+    margin-left: 2%;
+    margin-bottom: 10px;
+}
+.title-add-Group label {
+    font-weight: bold;
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+.list-friend {
+    margin-top: 20px;
+    height: 408px;
+}
+.list-friend label {
+    font-weight: bold;
+    font-family: var(--font-family);
+    font-size: 1.8rem;
+    margin-left: 20px;
+}
+//@at-root
+.conversations {
+    height: calc(65vh - 80px);
+    // background-color: #0000ff;
+    //height: 200px;
+    overflow-y: scroll;
+    overflow-y: overlay;
+}
+//@at-root
+.add-friend-bottom {
+    height: 70px;
+}
+.bottom-button {
+    margin-left: 70%;
+    width: 150px;
+    display: flex;
+}
+.add-friend-bottom button {
+    margin-top: 15px;
+    border: 0;
+    cursor: pointer;
+}
+.add-friend-bottom .cancel {
+    height: 40px;
+    width: 55px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.add-friend-bottom .search {
+    height: 40px;
+    padding-left: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: black;
+}
+///danh sach
+///
+// List conversation
+.list-conversation {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--grey-400);
+        transition: background-color ease-in-out 200ms;
+    }
+}
+
+// Avatar
+.avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+// Content message
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 12px;
+}
+
+.username {
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0 0 4px 0;
+}
+.input-radio input {
+    width: 1.3em;
+    height: 1.3em;
+    cursor: pointer;
+}
+.result-add-friend button {
+    font-size: 18px;
+    height: 30px;
+    width: 80px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #5757e8;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.result-friend p {
+    font-size: 14px;
+    height: 30px;
+    width: 80px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: var(--font-family);
+}
+.error {
+    display: block;
+    color: red;
+    font-size: 1.5rem;
+    padding-left: 5%;
+    margin-top: 5px;
+    font-family: var(--font-family);
+    border-bottom: solid 0.5px #d3d3d3;
+}
+.numberCheck {
+    display: block;
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    padding-left: 3%;
+}
+.validate {
+    height: 20px;
+}
