@@ -3,7 +3,149 @@ const Conversation = require("../models/conversation");
 const AppError = require("../utils/appError");
 const User = require("../models/user");
 const { v4: uuidv4 } = require('uuid');
+const AWS = require("aws-sdk");
+AWS.config.update({
+  accessKeyId: process.env.ID,
+  secretAccessKey: process.env.SECRET,
+  region: process.env.region,
+});
+const s3 = new AWS.S3();
+exports.createMessageManyFileWeb = async (req, res, next) => {
+  try {
+    let _imageLinks = [];
+    let _fileLink = "";
+    if (!req.files) {
+      _imageLinks = null;
+      _fileLink = null;
+    }
+    else {
+      if(req.files.imageLinks){
+        if (req.files.imageLinks.length) {
+          const _imageLinksClient = req.files.imageLinks;
+          for (let i = 0; i < _imageLinksClient.length; i++) {
+            const _fileContent = Buffer.from(_imageLinksClient[i].data, "binary");
+            const _param = {
+              Bucket: "mechat-v2",
+              Key: uuidv4() + _imageLinksClient[i].name,
+              ContentType: 'image/png',
+              Body: _fileContent,
+            }
+            const _paramLocation = await s3
+              .upload(_param, (err, data) => {
+                if (err) {
+                  throw err;
+                }
+              })
+              .promise();
+            _imageLinks.push( _paramLocation.Location);
+          };
+        }else{
+          let _fileContentImage = Buffer.from(req.files.imageLinks.data, "binary");
+          let _paramImage = {
+            Bucket: "mechat-v2",
+            Key: uuidv4() + req.files.imageLinks.name,
+            ContentType: 'image/png',
+            Body: _fileContentImage,
+          };
+          let _paramLocation = await s3
+            .upload(_paramImage, (err, data) => {
+              if (err) {
+                throw err;
+              }
+            })
+            .promise();
+  
+            _imageLinks.push( _paramLocation.Location);
+        }
+      }
+      if (req.files.fileLink) {
+        const _fileLinkClient = req.files.fileLink;
+        const _fileContent = Buffer.from(_fileLinkClient.data, "binary");
+        const _param = {
+          Bucket: "mechat-v2",
+          Key: _fileLinkClient.name,
+          Body: _fileContent,
+        }
+        const _paramFileLocation = await s3
+          .upload(_param, (err, data) => {
+            if (err) {
+              throw err;
+            }
+          })
+          .promise();
+        _fileLink = _paramFileLocation.Location;
+      }
+    }
+    const { content, conversationID, senderID } = req.body;
+    let _seen = [];
+    _seen.push(senderID);
+    const _newMessage = await Message.create({
+      content: content,
+      conversationID: conversationID,
+      senderID: senderID,
+      seen:_seen,
+      imageLink: _imageLinks,
+      fileLink: _fileLink,
+      action: null,
+    });
 
+    let _content = "";
+    if(_imageLinks){
+      if (_imageLinks[_imageLinks.length - 1] != null) {
+        var _confirmEnd = _imageLinks[_imageLinks.length - 1].split(".");
+        if (
+          _confirmEnd[_confirmEnd.length - 1] == "jpg" ||
+          _confirmEnd[_confirmEnd.length - 1] == "jpeg" ||
+          _confirmEnd[_confirmEnd.length - 1] == "png" ||
+          _confirmEnd[_confirmEnd.length - 1] == "gif" ||
+          _confirmEnd[_confirmEnd.length - 1] == "pdf"
+        ) {
+          _content = "[Hình ảnh]";
+        } else if (
+          _confirmEnd[_confirmEnd.length - 1] == "mp4" ||
+          _confirmEnd[_confirmEnd.length - 1] == "mp3" ||
+          _confirmEnd[_confirmEnd.length - 1] == "vma" ||
+          _confirmEnd[_confirmEnd.length - 1] == "avi" ||
+          _confirmEnd[_confirmEnd.length - 1] == "mkv" ||
+          _confirmEnd[_confirmEnd.length - 1] == "wmv"
+          ) {
+          _content = "[Video]";
+        }
+      }
+     }
+     if(_fileLink){
+        _content = "[File]";
+     }
+     const _con = await Conversation.findById(conversationID)
+     let _deleteBy = _con.deleteBy;
+     _deleteBy.pull(senderID);
+    const _conversation = await Conversation.findByIdAndUpdate(
+      { _id: conversationID },
+      {
+        lastMessage: _newMessage,
+        deleteBy:_deleteBy
+      },
+      { new: true }
+    );
+
+    let _data = {
+      contentMessage:_content,
+      _id:_newMessage.id,
+      content:_newMessage.content,
+      imageLink : _newMessage.imageLink,
+      fileLink:_newMessage.fileLink,
+      members:_conversation.members,
+      conversationID:_newMessage.conversationID,
+      senderID:_newMessage.senderID,
+      action:_newMessage.action,
+      deleteBy:_newMessage.deleteBy,
+      createAt:_newMessage.createdAt,
+    }
+    res.status(200).json(_data);
+  } catch (err) {
+    res.status(500).json({ msg: err.message });
+  }
+};
 //Oke
 exports.getTenLastMessageInConversationID = async (req, res, next) => {
   try {

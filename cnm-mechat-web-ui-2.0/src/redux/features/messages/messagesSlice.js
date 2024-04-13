@@ -161,7 +161,7 @@ const createFormData = (imageMessage) => {
 export const fetchApiSendMessage = createAsyncThunk('messages/fetchApiSendMessage', async (imageMessage) => {
     if (imageMessage) {
         let formData = createFormData(imageMessage);
-        const resFormData = await axios.post(`${process.env.REACT_APP_BASE_URL}messages`, formData, {
+        const resFormData = await axios.post(`${process.env.REACT_APP_BASE_URL}messages/web`, formData, {
             headers: {
                 'content-type': 'multipart/form-data',
             },

@@ -42,23 +42,23 @@ process.on("unhandledRejection", (err) => {
 // async function run() {
 //   ///User 1
 //   const _ThiepAccount = await Account.create({
-//     phoneNumber:"0968376202",
+//     phoneNumber:"0968376205",
 //     passWord:await bcrypt.hash("123456", 10),
 //   });
 
 //   const _ThiepUser = await User.create({
-//     fullName:"Tran Trong Thiep",
+//     fullName:"Thiep clone",
 //     bio:"abc",
 //     birthday:Date.now(),
 //     accountID:_ThiepAccount,
-//     avatarLink:"https://chiemtaimobile.vn/images/companies/1/%E1%BA%A2nh%20Blog/avatar-facebook-dep/Anh-avatar-hoat-hinh-de-thuong-xinh-xan.jpg?1704788263223",
-//     backgroundLink:"https://chiemtaimobile.vn/images/companies/1/%E1%BA%A2nh%20Blog/avatar-facebook-dep/Anh-avatar-hoat-hinh-de-thuong-xinh-xan.jpg?1704788263223",     
+//     avatarLink:"https://gcs.tripi.vn/public-tripi/tripi-feed/img/474250ZNp/photo-6-16675562029442139900239-1667630383932-16676303841561657948359.jpg",
+//     backgroundLink:"https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg",     
 //   });
 
 //   //User 2
 
 //   const _Thiep2Account = await Account.create({
-//     phoneNumber:"01699987346",
+//     phoneNumber:"0968376205",
 //     passWord:await bcrypt.hash("123456", 10),
 //   });
 
@@ -68,7 +68,7 @@ process.on("unhandledRejection", (err) => {
 //     birthday:Date.now(),
 //     accountID:_Thiep2Account,
 //     avatarLink:"https://chiemtaimobile.vn/images/companies/1/%E1%BA%A2nh%20Blog/avatar-facebook-dep/Anh-avatar-hoat-hinh-de-thuong-xinh-xan.jpg?1704788263223",
-//     backgroundLink:"https://chiemtaimobile.vn/images/companies/1/%E1%BA%A2nh%20Blog/avatar-facebook-dep/Anh-avatar-hoat-hinh-de-thuong-xinh-xan.jpg?1704788263223",
+//     backgroundLink:"https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg",
 //   });
 
   // await _ThiepAccount.save();
@@ -79,4 +79,4 @@ process.on("unhandledRejection", (err) => {
 
 
   
-//}
+// }

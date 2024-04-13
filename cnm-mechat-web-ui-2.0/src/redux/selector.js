@@ -213,6 +213,9 @@ export const filterFriendGroup = createSelector(conversationSlice, listFriend, (
 
 //tim nhom truong
 export const filterLeader = createSelector(conversationSlice, userListSelector, (c, users) => {
+    if (!users) {
+        return [];
+    }
     const usersFilter1 = users.filter((_user) => _user._id.includes(c?.createdBy));
 
     if (!usersFilter1.length) {

@@ -6,6 +6,7 @@ Router.get("/recall/:messageId", MessagesController.recallMessage);
 
 Router.post("/ten-last-messages/:conversationId",MessagesController.getTenLastMessageInConversationID);
 Router.post("/", MessagesController.createMessageManyFile);
+Router.post("/web", MessagesController.createMessageManyFileWeb);
 Router.post("/move-message/:messageId", MessagesController.moveMessage);
 Router.post("/update-seen/:messageId", MessagesController.updateSeen);
 
