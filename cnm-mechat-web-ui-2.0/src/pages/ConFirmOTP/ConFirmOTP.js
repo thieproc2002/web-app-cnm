@@ -4,9 +4,9 @@ import images from '~/assets/images';
 import { ArrowLeft } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { authentication } from '~/util/firebase';
+import { authentication } from '../../util/firebase';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-import { forgetPassWord } from '~/redux/features/user/userSlice';
+import { forgetPassWord } from '../../redux/features/user/userSlice';
 import { useDispatch } from 'react-redux';
 
 const cx = classNames.bind(styles);
@@ -106,6 +106,7 @@ function ConFirmOTP() {
                 console.log('trong if');
                 generateRecaptcha();
                 if (OTP.length === 6) {
+                    console.log('66666');
                     let confirmationResult = window.confirmationResult;
                     confirmationResult
                         .confirm(OTP)
@@ -113,6 +114,7 @@ function ConFirmOTP() {
                             // User signed in successfully.
                             // ...
                             if (typeof userName != 'undefined') {
+                                //////////////////////////////////////////////////////////////////////////
                                 register().then((token) => {
                                     if (typeof token != 'undefined') {
                                         alert('Đăng ký thành công');

@@ -26,7 +26,7 @@ function Rightbar({ peer }) {
                 <div className={cx('container-messages')}>
                     <div className={cx('intro')}>
                         <span className={cx('title')}>
-                            Chào mừng đến với <b>MeChat PC!</b>
+                            Chào mừng đến với <b>ChatSE PC!</b>
                         </span>
                         <p className={cx('description')}>
                             Khám phá những tiện ích hỗ trợ làm việc và trò chuyện cùng người thân, bạn bè được tối ưu
