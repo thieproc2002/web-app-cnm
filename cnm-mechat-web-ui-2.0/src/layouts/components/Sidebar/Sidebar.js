@@ -77,7 +77,7 @@ function Sidebar() {
                             <FontAwesomeIcon icon={faAddressBook} />
                         </NavLink>
                     </Tippy>
-                    <Tippy
+                    {/* <Tippy
                         className={cx('tool-tip')}
                         content="To-do"
                         delay={[200, 0]}
@@ -87,10 +87,10 @@ function Sidebar() {
                         <NavLink className={cx('option-item')} to="#">
                             <FontAwesomeIcon icon={faSquareCheck} />
                         </NavLink>
-                    </Tippy>
+                    </Tippy> */}
                     <Tippy
                         className={cx('tool-tip')}
-                        content="Za-vi"
+                        content="Danh sách cuộc gọi"
                         delay={[200, 0]}
                         placement="bottom-end"
                         offset={[40, -6]}
@@ -104,7 +104,7 @@ function Sidebar() {
 
             {/* bottom */}
             <div className={cx('sidebar-bottom')}>
-                <Tippy
+                {/* <Tippy
                     className={cx('tool-tip')}
                     content="Cloud"
                     delay={[200, 0]}
@@ -114,8 +114,8 @@ function Sidebar() {
                     <NavLink className={cx('option-item')} to="#">
                         <FontAwesomeIcon icon={faCloud} />
                     </NavLink>
-                </Tippy>
-                <Tippy
+                </Tippy> */}
+                {/* <Tippy
                     className={cx('tool-tip')}
                     content="Công cụ"
                     delay={[200, 0]}
@@ -125,7 +125,7 @@ function Sidebar() {
                     <NavLink className={cx('option-item')} to="#">
                         <FontAwesomeIcon icon={faToolbox} />
                     </NavLink>
-                </Tippy>
+                </Tippy> */}
                 <MenuSetting user={user}>
                     <Tippy className={cx('tool-tip')} content="Cài đặt" delay={[200, 0]} placement="right-end">
                         {/* Add div fix warning of Tippy */}

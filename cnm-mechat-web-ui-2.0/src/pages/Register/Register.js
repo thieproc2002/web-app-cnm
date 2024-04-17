@@ -42,9 +42,9 @@ function Register() {
     const [openPolyci, setOpenPolyci] = useState(false);
     const [checkPolyci, setcheckPolyci] = useState(false);
 
-    useEffect(() => {
-        dispatch(filterSlice.actions.searchFilterChange(phoneNumber));
-    }, [debouncedValue]);
+    // useEffect(() => {
+    //     dispatch(filterSlice.actions.searchFilterChange(phoneNumber));
+    // }, [debouncedValue]);
 
     const generateRecaptcha = () => {
         window.recaptchaVerifier = new RecaptchaVerifier(
@@ -94,7 +94,7 @@ function Register() {
                     // Error; SMS not sent
                     // ...
                     //alert('Tài khoản đã yêu cầu quá nhiều lần!!!');
-                    console.log('Chưa gửi về OTP' + error);
+                    console.log('Chưa gửi về OTP ' + error);
                 });
         }
     };
@@ -224,7 +224,7 @@ function Register() {
                         >
                             <div className={cx('model-add-group-bg')}>
                                 <div className={cx('add-friend-title')}>
-                                    <span className={cx('friend-title')}>Chính sách Me.Chat</span>
+                                    <span className={cx('friend-title')}>Chính sách ChatSE</span>
                                     <button className={cx('close-btn')}>
                                         <FontAwesomeIcon
                                             className={cx('friend-close-ic')}
@@ -234,7 +234,7 @@ function Register() {
                                     </button>
                                 </div>
                                 <div className={cx('content-polyci')}>
-                                    <h5 className={cx('content-polyci-title')}> Chính sách sử dụng của MeChat</h5>
+                                    <h5 className={cx('content-polyci-title')}> Chính sách sử dụng của ChatSE</h5>
                                     <p>
                                         Các chính sách của chúng tôi đóng vai trò quan trọng trong việc duy trì trải
                                         nghiệm tích cực cho người dùng. Vui lòng tuân thủ các chính sách này khi sử dụng
