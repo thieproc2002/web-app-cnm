@@ -443,7 +443,7 @@ function Messenger({ conversationPhoneBook }) {
             <ModelWrapper className={cx('model-add-friend')} open={openCall} onClose={handleModelCloseOpenCallVideo}>
                 <div className={cx('model-add-group-bg')}>
                     <div className={cx('add-friend-title')}>
-                        <span className={cx('friend-title')}>Me.Chat Call - {userCurrent?.fullName}</span>
+                        <span className={cx('friend-title')}>Alo.Chat Call - {userCurrent?.fullName}</span>
                         <button className={cx('close-btn-close-video-call')}>
                             <FontAwesomeIcon
                                 className={cx('friend-close-ic')}

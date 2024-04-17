@@ -25,7 +25,7 @@ exports.createMessageManyFileWeb = async (req, res, next) => {
           for (let i = 0; i < _imageLinksClient.length; i++) {
             const _fileContent = Buffer.from(_imageLinksClient[i].data, "binary");
             const _param = {
-              Bucket: "mechat-v2",
+              Bucket: "zalo1",
               Key: uuidv4() + _imageLinksClient[i].name,
               ContentType: 'image/png',
               Body: _fileContent,
@@ -42,7 +42,7 @@ exports.createMessageManyFileWeb = async (req, res, next) => {
         }else{
           let _fileContentImage = Buffer.from(req.files.imageLinks.data, "binary");
           let _paramImage = {
-            Bucket: "mechat-v2",
+            Bucket: "zalo1",
             Key: uuidv4() + req.files.imageLinks.name,
             ContentType: 'image/png',
             Body: _fileContentImage,
@@ -62,7 +62,7 @@ exports.createMessageManyFileWeb = async (req, res, next) => {
         const _fileLinkClient = req.files.fileLink;
         const _fileContent = Buffer.from(_fileLinkClient.data, "binary");
         const _param = {
-          Bucket: "mechat-v2",
+          Bucket: "zalo1",
           Key: _fileLinkClient.name,
           Body: _fileContent,
         }

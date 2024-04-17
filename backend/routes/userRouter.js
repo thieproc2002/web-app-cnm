@@ -10,6 +10,7 @@ Router.get('/get-user-by-phone/:phoneNumber',UserController.getUserByPhoneNumber
 
 Router.post('/delete-friend/:userId',UserController.deleteFriend);
 Router.post('/update-avatar/:userId',UserController.updateAvar);
+Router.post('/update-avatar-web/:userId',UserController.updateAvarWeb);
 Router.post('/update-background/:userId',UserController.updateBack);
 
 Router

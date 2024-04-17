@@ -119,7 +119,7 @@ function Middle() {
                         ) : (
                             <p className={cx('conversation-none')}>
                                 Bạn chưa có cuộc trò chuyện nào. Bạn có thể kết bạn để trò chuyện trực tuyến trên{' '}
-                                <b> Mechat</b>.
+                                <b> Chat</b>.
                             </p>
                         )}
                     </>

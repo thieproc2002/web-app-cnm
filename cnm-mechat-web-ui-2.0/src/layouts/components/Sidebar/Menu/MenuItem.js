@@ -72,7 +72,7 @@ function MenuItem({ user }) {
                     >
                         <>
                             <div className={cx('model-intro-header')}>
-                                <h1 className={cx('model-intro-header-name')}>MeChat Web</h1>
+                                <h1 className={cx('model-intro-header-name')}>Chat Web</h1>
                                 <img className={cx('model-intro-header-img')} src={images.logo} alt="logo-mechat" />
                             </div>
                             <div className={cx('model-intro-body')}>
@@ -83,11 +83,11 @@ function MenuItem({ user }) {
                                 </div>
                                 <div className={cx('info-desc-line')}>
                                     <div className={cx('info-title')}>Email: </div>
-                                    <div>mechathelp@gmail.com</div>
+                                    <div>chathelp@gmail.com</div>
                                 </div>
                                 <div className={cx('info-desc-line')}>
                                     <div className={cx('info-title')}>Website: </div>
-                                    <div>https://me.chat/pc</div>
+                                    <div>https://alo.chat/pc</div>
                                 </div>
                             </div>
                         </>

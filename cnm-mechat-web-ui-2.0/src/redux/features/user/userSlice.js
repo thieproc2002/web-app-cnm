@@ -63,7 +63,7 @@ export const updateAvatar = createAsyncThunk(
         if (data) {
             let formData = createFormData(data);
 
-            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}users/update-avatar/${data._id}`, formData, {
+            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}users/update-avatar-web/${data._id}`, formData, {
                 headers: {
                     'content-type': 'multipart/form-data',
                 },
