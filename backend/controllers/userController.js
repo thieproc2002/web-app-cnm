@@ -16,7 +16,7 @@ exports.updateBack = async (req, res, next) => {
     if (req.files != null) {
       const _fileContentBack = Buffer.from(req.files.backLink.data, "binary");
       const _paramBack = {
-        Bucket: 'zalo',
+        Bucket: 'zalo1',
         Key: req.files.backLink.name,
         Body: _fileContentBack,
       };
@@ -127,7 +127,7 @@ exports.updateAvar = async (req, res, next) => {
     if (req.file != null) {
       const _fileContentAvar = Buffer.from(req.files.avatarLink.data, "binary");
       const _paramAvar = {
-        Bucket: "zalo",
+        Bucket: "zalo1",
         Key: req.file.name,
         Body: req.file.buffer,
         ContentType: req.file.mimetype,

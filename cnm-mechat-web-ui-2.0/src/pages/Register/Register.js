@@ -1,7 +1,7 @@
 //lib
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { PhoneIphone, Lock, Person, ArrowLeft, CheckBox } from '@material-ui/icons';
+import { PhoneIphone, Lock, Person, ArrowLeft, CheckBox, Check } from '@material-ui/icons';
 import classNames from 'classnames/bind';
 //me
 import styles from './Register.module.scss';
@@ -32,7 +32,7 @@ function Register() {
     const searchAccountExists = useSelector(accountExists);
 
     // bat loi
-    // const [check, setCheck] = useState(false);
+    const [check, setCheck] = useState(false);
     const [errorUserName, setErrorUserName] = useState('');
     const [errorPhoneNumber, setErrorPhoneNumber] = useState('');
     const [errorPassword, setErrorPassword] = useState('');
@@ -42,9 +42,9 @@ function Register() {
     const [openPolyci, setOpenPolyci] = useState(false);
     const [checkPolyci, setcheckPolyci] = useState(false);
 
-    // useEffect(() => {
-    //     dispatch(filterSlice.actions.searchFilterChange(phoneNumber));
-    // }, [debouncedValue]);
+    useEffect(() => {
+        dispatch(filterSlice.actions.searchFilterChange(phoneNumber));
+    }, [debouncedValue]);
 
     const generateRecaptcha = () => {
         window.recaptchaVerifier = new RecaptchaVerifier(
@@ -172,7 +172,7 @@ function Register() {
                                 value={phoneNumber}
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                             />
-                            {/* {check === true ? <Check className={cx('item-check')} /> : null} */}
+                            {check === true ? <Check className={cx('item-check')} /> : null}
                         </div>
                         <span className={cx('error')}>{errorPhoneNumber}</span>
                         <div className={cx('form-user')}>
@@ -184,7 +184,7 @@ function Register() {
                                 value={userName}
                                 onChange={(e) => setUserName(e.target.value)}
                             />
-                            {/* <Check className={cx('item-check')} /> */}
+                            <Check className={cx('item-check')} />
                         </div>
                         <span className={cx('error')}>{errorUserName}</span>
                         <div className={cx('form-password')}>
@@ -196,7 +196,7 @@ function Register() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            {/* <Check className={cx('item-check')} /> */}
+                            <Check className={cx('item-check')} />
                         </div>
                         <span className={cx('error')}>
                             <p>{errorPassword}</p>
@@ -210,7 +210,7 @@ function Register() {
                                 value={confirmPassword}
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                             />
-                            {/* <Check className={cx('item-check')} /> */}
+                            <Check className={cx('item-check')} />
                         </div>
                         <span className={cx('error')}>{errorConfirmPassword}</span>
                         <div className={cx('policy')}>

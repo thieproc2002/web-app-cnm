@@ -50,7 +50,7 @@ exports.addReport = async (req, res) => {
         const _fileClient = req.files.fileImage;
         const _fileContent = Buffer.from(_fileClient.data, "binary");
         const _param = {
-          Bucket: "zalo",
+          Bucket: "zalo1",
           Key: uuidv4() + _fileClient.name,
           Body: _fileContent,
         }

@@ -383,7 +383,7 @@ exports.changeAvatar = async (req, res) => {
 
     const _fileContentImage = Buffer.from(_fileImage.data, "binary");
     const _paramAvatar = {
-      Bucket: "zalo",
+      Bucket: "zalo1",
       Key: uuidv4() + _fileImage.name,
       ContentType: 'image/png',
       Body: _fileContentImage,
