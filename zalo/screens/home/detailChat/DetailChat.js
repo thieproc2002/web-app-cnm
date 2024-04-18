@@ -88,7 +88,7 @@ export default function DetailChat({ route, navigation }) {
             quality: 1,
         });
 
-        if (!result.cancelled) {
+        if (!result.canceled) {
             const data = {
                 key1: 'userId',
                 key2: 'imageLink',
@@ -319,12 +319,12 @@ export default function DetailChat({ route, navigation }) {
                             <Icon name="people-outline" color="black" size={20}></Icon>
                             <Text style={{ marginLeft: 10 }}>Xem thành viên</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.photo} onPress={showConfirmDialogOutGroup}>
+                        <TouchableOpacity style={styles.photo} onPress={outGroup}>
                             <Icon name="enter-outline" color="red" size={20}></Icon>
                             <Text style={{ marginLeft: 10, color: 'red' }}>Rời nhóm</Text>
                         </TouchableOpacity>
                         {createdBy == userInfo._id ? (
-                            <TouchableOpacity style={styles.photo} onPress={showConfirmDialogRemove}>
+                            <TouchableOpacity style={styles.photo} onPress={handleRemoveConversation}>
                                 <Icon name="trash-outline" color="red" size={20}></Icon>
                                 <Text style={{ marginLeft: 10, color: 'red' }}>Giải tán nhóm</Text>
                             </TouchableOpacity>

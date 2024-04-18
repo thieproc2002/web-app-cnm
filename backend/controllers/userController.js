@@ -16,7 +16,7 @@ exports.updateBack = async (req, res, next) => {
     if (req.files != null) {
       const _fileContentBack = Buffer.from(req.files.backLink.data, "binary");
       const _paramBack = {
-        Bucket: 'zalo',
+        Bucket: 'zalo1',
         Key: req.files.backLink.name,
         Body: _fileContentBack,
       };
@@ -124,66 +124,63 @@ exports.updateAvar = async (req, res, next) => {
 };
 exports.updateAvarWeb = async (req, res, next) => {
   try {
-    if (req.file != null) {
+    if (req.files != null) {
       const _fileContentAvar = Buffer.from(req.files.avatarLink.data, "binary");
       const _paramAvar = {
         Bucket: "zalo1",
-        Key: req.file.name,
-        Body: req.file.buffer,
-        ContentType: req.file.mimetype,
+        Key: req.files.avatarLink.name,
+        Body: _fileContentAvar,
       };
-      const _paramAvarLocation = s3
-        .upload(_paramAvar, async (err, data) => {
+      const _paramAvarLocation = await s3
+        .upload(_paramAvar, (err, data) => {
           if (err) {
             throw err;
           }
-          else{
-            const _user = await User.findByIdAndUpdate(req.params.userId, {
-              avatarLink: data.Location,
-            });
-            const _conversations = await Conversation.find({
-              members: { $in: [_user.id] },
-            });
-            for (let i of _conversations) {
-              if (i.members.length == 2) {
-                let _imageLink = i.imageLink;
-                for (let j = 0; j < _imageLink.length; j++) {
-                  if (_imageLink[j] == _user.avatarLink) {
-                    _imageLink[j] = _paramAvarLocation.Location;
-                    await Conversation.findByIdAndUpdate(i.id, {
-                      imageLink: _imageLink,
-                    });
-                  }
-                }
-              }
-            }
-            if (!_user) {
-              return next(
-                new AppError(404, "fail", "No document found with that id"),
-                req,
-                res,
-                next
-              );
-            }
-            const _userUpdate = await User.findById(_user.id);
-            const _account = await Account.findById(_userUpdate.accountID);
-            const _data = {
-              _id: _userUpdate.id,
-              fullName: _userUpdate.fullName,
-              bio: _userUpdate.bio,
-              gender: _userUpdate.gender,
-              birthday: _userUpdate.birthday,
-              status: _userUpdate.status,
-              avatarLink: _userUpdate.avatarLink,
-              backgroundLink: _userUpdate.backgroundLink,
-              friends: _userUpdate.friends,
-              phoneNumber: _account.phoneNumber,
-              warning:_userUpdate.warning
-            };
-            res.status(200).json(_data);
-          }
         })
-        ;
+        .promise();
+      const _user = await User.findByIdAndUpdate(req.params.userId, {
+        avatarLink: _paramAvarLocation.Location,
+      });
+      const _conversations = await Conversation.find({
+        members: { $in: [_user.id] },
+      });
+      for (let i of _conversations) {
+        if (i.members.length == 2) {
+          let _imageLink = i.imageLink;
+          for (let j = 0; j < _imageLink.length; j++) {
+            if (_imageLink[j] == _user.avatarLink) {
+              _imageLink[j] = _paramAvarLocation.Location;
+              await Conversation.findByIdAndUpdate(i.id, {
+                imageLink: _imageLink,
+              });
+            }
+          }
+        }
+      }
+      if (!_user) {
+        return next(
+          new AppError(404, "fail", "No document found with that id"),
+          req,
+          res,
+          next
+        );
+      }
+      const _userUpdate = await User.findById(_user.id);
+      const _account = await Account.findById(_userUpdate.accountID);
+      const _data = {
+        _id: _userUpdate.id,
+        fullName: _userUpdate.fullName,
+        bio: _userUpdate.bio,
+        gender: _userUpdate.gender,
+        birthday: _userUpdate.birthday,
+        status: _userUpdate.status,
+        avatarLink: _userUpdate.avatarLink,
+        backgroundLink: _userUpdate.backgroundLink,
+        friends: _userUpdate.friends,
+        phoneNumber: _account.phoneNumber,
+        warning:_userUpdate.warning
+      };
+      res.status(200).json(_data);
     } else {
       return res.status(400).json({ msg: "Dữ liệu null" });
     }

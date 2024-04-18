@@ -189,6 +189,14 @@ function Messenger({ conversationPhoneBook }) {
             connectionRef.current.destroy();
         });
     }, []);
+    
+    const handleKeyDown = (e) => {
+        // Nếu người dùng nhấn phím "Enter" và không giữ phím "Shift"
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault(); // Ngăn chặn việc xuống dòng trong textarea
+            handleSendMessage(); // Gửi tin nhắn
+        }
+    };
 
     const handleOpenCallVideo = () => {
         navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
@@ -313,7 +321,7 @@ function Messenger({ conversationPhoneBook }) {
 
     // handle button send message
     const handleSendMessage = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         // check size file
         if (newFileMessage?.size / 1024 / 1024 > 5 || newImageMessage?.size / 1024 / 1024 > 5) {
@@ -677,6 +685,7 @@ function Messenger({ conversationPhoneBook }) {
                                         : newMessage
                                 }
                                 onChange={handleChangeMessage}
+                                onKeyDown={handleKeyDown}
                                 placeholder="Nhập tin nhắn ..."
                             ></textarea>
 

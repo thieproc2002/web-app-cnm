@@ -4,9 +4,9 @@ import images from '~/assets/images';
 import { ArrowLeft } from '@material-ui/icons';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { authentication } from '~/util/firebase';
+import { authentication } from '../../util/firebase';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-import { forgetPassWord } from '~/redux/features/user/userSlice';
+import { forgetPassWord } from '../../redux/features/user/userSlice';
 import { useDispatch } from 'react-redux';
 
 const cx = classNames.bind(styles);
@@ -26,8 +26,8 @@ function ConFirmOTP() {
     //dữ liệu tu truyền quen mk
 
     //register
-    const register = () => {
-        return fetch(`${process.env.REACT_APP_BASE_URL}auths/signup`, {
+    const register = async () => {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}auths/signup`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -38,20 +38,18 @@ function ConFirmOTP() {
                 phoneNumber: phoneNumber,
                 passWord: password,
             }),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.status === 'success') {
-                    console.log(data);
-                    return data;
-                }
-                if (data?.error.statusCode === 403) {
-                    throw new Error('Số điện thoại đã tồn tại');
-                }
-                if (data?.error.statusCode === 404) {
-                    throw new Error('Số điện thoại không đúng');
-                }
-            });
+        });
+        const data = await response.json();
+        if (data.status === 'success') {
+            console.log(data);
+            return data;
+        }
+        if (data?.error.statusCode === 403) {
+            throw new Error('Số điện thoại đã tồn tại');
+        }
+        if (data?.error.statusCode === 404) {
+            throw new Error('Số điện thoại không đúng');
+        }
     };
     useEffect(() => {
         const timer = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
@@ -59,8 +57,8 @@ function ConFirmOTP() {
             clearInterval(timer);
         };
     }, [counter]);
-    const sign = () => {
-        return fetch(`${process.env.REACT_APP_BASE_URL}auths/login`, {
+    const sign = async () => {
+        const res = await fetch(`${process.env.REACT_APP_BASE_URL}auths/login`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -70,19 +68,17 @@ function ConFirmOTP() {
                 phoneNumber: phoneNumber,
                 passWord: password,
             }),
-        })
-            .then((res) => res.json())
-            .then((resData) => {
-                if (resData.status === 'success') {
-                    return resData;
-                } else if (resData?.error.statusCode === 401) {
-                    throw new Error(401);
-                } else if (resData?.error.statusCode === 403) {
-                    throw new Error(403);
-                } else if (resData?.error.statusCode === 402) {
-                    throw new Error(402);
-                }
-            });
+        });
+        const resData = await res.json();
+        if (resData.status === 'success') {
+            return resData;
+        } else if (resData?.error.statusCode === 401) {
+            throw new Error(401);
+        } else if (resData?.error.statusCode === 403) {
+            throw new Error(403);
+        } else if (resData?.error.statusCode === 402) {
+            throw new Error(402);
+        }
         // .catch((err) => {
         //     return Promise.reject(new Error('404 else'));
         // });
@@ -106,6 +102,7 @@ function ConFirmOTP() {
                 console.log('trong if');
                 generateRecaptcha();
                 if (OTP.length === 6) {
+                    console.log('66666');
                     let confirmationResult = window.confirmationResult;
                     confirmationResult
                         .confirm(OTP)
@@ -113,6 +110,7 @@ function ConFirmOTP() {
                             // User signed in successfully.
                             // ...
                             if (typeof userName != 'undefined') {
+                                //////////////////////////////////////////////////////////////////////////
                                 register().then((token) => {
                                     if (typeof token != 'undefined') {
                                         alert('Đăng ký thành công');
