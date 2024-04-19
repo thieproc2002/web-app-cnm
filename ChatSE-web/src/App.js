@@ -40,7 +40,7 @@ function App() {
                 <Route path="/" element={<Navigate replace to="/login" />} />
 
                 {/* Home page */}
-                <Route exact path="/me.chat" element={<Home />} />
+                <Route exact path="/ChatSE" element={<Home />} />
 
                 {/* Confirm otp */}
                 <Route path="/confirmotp" element={<ConFirmOTP />} />

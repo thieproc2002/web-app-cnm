@@ -192,7 +192,7 @@ function ReplacePassWord({ route, navigation }) {
         <View style={GlobalStyle.container}>
             {/* logo */}
             <View style={LoginStyles.logo}>
-                <Image style={LoginStyles.img} source={require('../../../assets/mechat-logo.png')} />
+                <Image style={LoginStyles.img} source={require('../../../assets/logo.png')} />
                 <Text style={LoginStyles.title}>{isChange ? 'Thay đổi mật khẩu' : 'Khôi phục mật khẩu'} </Text>
                 {isChange ? null : <Text style={LoginStyles.subtitle}>Tạo mật khẩu mới</Text>}
             </View>

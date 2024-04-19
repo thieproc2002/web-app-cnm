@@ -71,7 +71,7 @@ function AddInfoUser() {
             }),
         );
         if (userUpdate() || updateAvatar()) {
-            navigate('/me.chat');
+            navigate('/ChatSE');
         }
     };
     const handleChange = (e) => {
@@ -90,7 +90,7 @@ function AddInfoUser() {
         console.log(file);
     };
     const handleCancel = () => {
-        navigate('/me.chat');
+        navigate('/ChatSE');
     };
 
     return (

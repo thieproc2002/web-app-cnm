@@ -202,7 +202,7 @@ function Home() {
             <ModelWrapper className={cx('model-add-friend')} open={openCall} onClose={handleModelCloseOpenCallVideo}>
                 <div className={cx('model-add-group-bg')}>
                     <div className={cx('add-friend-title')}>
-                        <span className={cx('friend-title')}>Alo.Chat Call - {name}</span>
+                        <span className={cx('friend-title')}>ChatSE Call - {name}</span>
                         <button className={cx('close-btn')}>
                             <FontAwesomeIcon
                                 className={cx('friend-close-ic')}
@@ -238,7 +238,7 @@ function Home() {
                                     alt="avatar"
                                 />
                             </div>
-                            <div className={cx('user-call')}>Alo-Chat Cuộc gọi video đến</div>
+                            <div className={cx('user-call')}>ChatSE Cuộc gọi video đến</div>
                         </>
                     )}
 

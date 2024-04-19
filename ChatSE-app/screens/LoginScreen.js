@@ -110,9 +110,9 @@ function LoginScreen({ navigation }) {
         <View style={GlobalStyle.container}>
             {/*  logo  */}
             <View style={LoginStyles.logo}>
-                <Image style={LoginStyles.img} source={require('../assets/mechat-logo.png')} />
+                <Image style={LoginStyles.img} source={require('../assets/logo.png')} />
                 <Text style={LoginStyles.title}>Đăng nhập</Text>
-                <Text style={LoginStyles.subtitle}>Chào mừng bạn đến với MezzChat</Text>
+                <Text style={LoginStyles.subtitle}>Chào mừng bạn đến với ChatSE</Text>
             </View>
             {/* Login */}
             <View style={LoginStyles.enterData}>

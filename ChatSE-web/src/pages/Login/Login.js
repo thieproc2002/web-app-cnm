@@ -29,8 +29,8 @@ function Login() {
 
     const isLoading = useLocation();
 
-    const sign = () => {
-        return fetch(`${process.env.REACT_APP_BASE_URL}auths/login`, {
+    const sign = async () => {
+        const res = await fetch(`${process.env.REACT_APP_BASE_URL}auths/login`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -40,19 +40,17 @@ function Login() {
                 phoneNumber: phoneNumber,
                 passWord: password,
             }),
-        })
-            .then((res) => res.json())
-            .then((resData) => {
-                if (resData.status === 'success') {
-                    return resData;
-                } else if (resData?.error.statusCode === 401) {
-                    throw new Error(401);
-                } else if (resData?.error.statusCode === 403) {
-                    throw new Error(403);
-                } else if (resData?.error.statusCode === 402) {
-                    throw new Error(402);
-                }
-            });
+        });
+        const resData = await res.json();
+        if (resData.status === 'success') {
+            return resData;
+        } else if (resData?.error.statusCode === 401) {
+            throw new Error(401);
+        } else if (resData?.error.statusCode === 403) {
+            throw new Error(403);
+        } else if (resData?.error.statusCode === 402) {
+            throw new Error(402);
+        }
         // .catch((err) => {
         //     return Promise.reject(new Error('404 else'));
         // });
@@ -74,7 +72,7 @@ function Login() {
                             state: true,
                         });
                         setTimeout(() => {
-                            navigate('/me.chat');
+                            navigate('/ChatSE');
                         }, 2000);
                     }
                 })

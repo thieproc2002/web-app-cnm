@@ -134,11 +134,11 @@ function ConFirmOTP() {
                                                 // alert('Đăng nhập thành công');
 
                                                 localStorage.setItem('user_login', JSON.stringify(token));
-                                                navigate('/me.chat', {
+                                                navigate('/ChatSE', {
                                                     state: true,
                                                 });
                                                 setTimeout(() => {
-                                                    navigate('/me.chat');
+                                                    navigate('/ChatSE');
                                                 }, 2000);
                                             }
                                         })

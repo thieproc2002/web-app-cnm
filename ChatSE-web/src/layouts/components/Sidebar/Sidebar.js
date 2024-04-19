@@ -53,7 +53,7 @@ function Sidebar() {
                         placement="bottom-end"
                         offset={[40, -8]}
                     >
-                        <NavLink className={(nav) => cx('option-item', { active: nav.isActive })} to="/me.chat">
+                        <NavLink className={(nav) => cx('option-item', { active: nav.isActive })} to="/ChatSE">
                             <FontAwesomeIcon icon={faComment} />
                             {/* <span className={cx('badge')}>5+</span> */}
                         </NavLink>

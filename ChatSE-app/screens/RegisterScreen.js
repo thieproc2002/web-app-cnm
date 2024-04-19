@@ -184,7 +184,7 @@ function RegisterScreen({ navigation }) {
             />
             {/* logo */}
             <View style={LoginStyles.logo}>
-                <Image style={LoginStyles.img} source={require('../assets/mechat-logo.png')} />
+                <Image style={LoginStyles.img} source={require('../assets/logo.png')} />
                 <Text style={LoginStyles.title}>Đăng ký</Text>
                 <Text style={LoginStyles.subtitle}>Chào mừng bạn</Text>
             </View>

@@ -103,7 +103,7 @@ function ConfirmPhoneNumber({ navigation }) {
             />
             {/*  logo  */}
             <View style={LoginStyles.logo}>
-                <Image style={LoginStyles.img} source={require('../../../assets/mechat-logo.png')} />
+                <Image style={LoginStyles.img} source={require('../../../assets/logo.png')} />
                 <Text style={LoginStyles.title}>Khôi phục mật khẩu</Text>
                 <Text style={LoginStyles.subtitle}>Nhập số điện thoại để nhận mã xác thực</Text>
             </View>
