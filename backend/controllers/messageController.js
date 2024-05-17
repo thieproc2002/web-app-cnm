@@ -199,7 +199,7 @@ exports.createMessageManyFile = async (req, res, next) => {
   try {
     
     
-    const { content, conversationID, senderID, name, imageLinks, fileLink } = req.body;
+    const { content, conversationID, senderID, imageLinks, fileLink } = req.body;
     let _seen = [];
     _seen.push(senderID);
     const _newMessage = await Message.create({

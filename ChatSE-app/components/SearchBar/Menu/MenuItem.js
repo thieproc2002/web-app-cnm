@@ -1,4 +1,3 @@
-import { onLongPress } from 'deprecated-react-native-prop-types/DeprecatedTextPropTypes';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 

@@ -211,7 +211,7 @@ export const sendFile = createAsyncThunk('message/sendFile', async (message) => 
         // formData.append('conversationID', message.conversationID);
         // formData.append('fileLink', message.fileToUpload);
         // console.log('formdata:', formData);
-        const response = await fetch(message.fileToUpload.uri);
+        const response = await fetch(fileToUpload.uri);
         const blob = await response.blob();
         const namepath = message.fileToUpload.name.split('.');
         const name = namepath[0];
@@ -230,11 +230,10 @@ export const sendFile = createAsyncThunk('message/sendFile', async (message) => 
           };    
           const dataupdate = await s3.upload(paramsS3).promise();
           let fileLink = dataupdate.Location;
-          const imageLinks = "";
           console.log('link: ',fileLink);
         const res = await fetch(`${config.LINK_API}/messages`, {
             method: 'POST',
-            body: JSON.stringify({ senderID, conversationID, fileLink, name, imageLinks }),
+            body: JSON.stringify({ senderID, conversationID, fileLink}),
             headers: {
                 'Content-Type': 'application/json',
             },

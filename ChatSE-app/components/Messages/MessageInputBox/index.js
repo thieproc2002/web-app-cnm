@@ -72,7 +72,7 @@ function MessageInputBox({ conversationId, blockBy }) {
                     const fileMB = image.fileSize / 1024 / 1024;
                     // console.log(fileMB);
                     //file small 5mb don't send
-                    if (fileMB < 5) {
+                    if (fileMB < 10) {
                         return image.uri;
                     } else {
                         isTrue = false;
@@ -96,9 +96,10 @@ function MessageInputBox({ conversationId, blockBy }) {
 
             if (!result.canceled) {
                 const data = {
-                    imageLinks: [result.uri],
+                    imageLinks: result.assets[0].uri,
                     senderID: userInfo._id,
                     conversationID: conversationId,
+                    fileType: result.assets[0].mimeType,
                 };
                 dispatch(sendImageMessage(data));
             }
@@ -131,8 +132,8 @@ function MessageInputBox({ conversationId, blockBy }) {
         if (!result.canceled) {
             const { name, size, uri } = result.assets[0];
             console.log("name:",name);
-            console.log("name:",size);
-            console.log("name:",uri);
+            console.log("size:",size);
+            console.log("uri:",uri);
 
             let nameParts = name.split('.');
             const fileType = nameParts[nameParts.length - 1];

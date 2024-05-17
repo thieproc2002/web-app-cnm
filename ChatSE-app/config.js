@@ -1,13 +1,13 @@
 
 import { io } from 'socket.io-client';
 
-console.log('API -->', "http://localhost:8091/api/v3");
+console.log('API -->', "http://192.168.0.16:8091/api/v3");
 export default {
-    LINK_API:"http://localhost:8091/api/v3",
-    LINK_API_LOCAL:"http://localhost:8091"
+    LINK_API:"http://192.168.0.16:8091/api/v3",
+    LINK_API_LOCAL:"http://192.168.0.16:8091"
 };
 
-export const socket = io('http://localhost:8900', {
+export const socket = io('http://192.168.0.16:8900', {
     transports: ['websocket'],
     //reconnection: true,
     withCredentials: true,

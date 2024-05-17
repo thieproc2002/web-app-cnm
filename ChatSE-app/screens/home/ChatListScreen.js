@@ -67,7 +67,7 @@ function ChatListScreen({ navigation }) {
     // UI
     return (
         <>
-            {/* <Header /> */}
+            <Header /> 
             <SearchBar navigation={navigation} />
             {conversationLoading ? (
                 <Loading />

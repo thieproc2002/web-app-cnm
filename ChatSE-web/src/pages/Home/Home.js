@@ -77,7 +77,7 @@ function Home() {
     }, [navigate, user]);
 
     useEffect(() => {
-        document.title = 'Alochat Web';
+        document.title = 'ChatSE Web';
     }, []);
 
     useEffect(() => {

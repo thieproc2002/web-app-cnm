@@ -93,10 +93,10 @@ export default function DetailChat({ route, navigation }) {
                 key1: 'userId',
                 key2: 'imageLink',
                 userId: userInfo._id,
-                imageLink: result.uri,
+                imageLink: result.assets[0].uri,
                 idConversation: idConversation,
             };
-            setImageUpdate(result.uri);
+            setImageUpdate(result.assets[0].uri);
             dispatch(fetchUpdateAvatarGroup(data));
         }
     };
