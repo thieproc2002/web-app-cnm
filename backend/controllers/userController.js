@@ -65,6 +65,48 @@ exports.updateBack = async (req, res, next) => {
   }
 };
 
+exports.updateBackApp = async (req, res, next) => {
+  try {
+    const {link} = req.body;
+      
+      const _user = await User.findByIdAndUpdate(req.params.userId, {
+        backgroundLink: link,
+      }).populate("accountID", "phoneNumber");
+      
+      
+      if (!_user) {
+        return next(
+          new AppError(404, "fail", "No document found with that id"),
+          req,
+          res,
+          next
+        );
+      }
+      const _userUpdate = await User.findById(_user.id);
+      const _account = await Account.findById(_userUpdate.accountID);
+      const _conversations2 = await Conversation.find({
+        members: { $in: [_user.id] },
+      });
+      
+      const _data = {
+        _id: _userUpdate.id,
+        fullName: _userUpdate.fullName,
+        bio: _userUpdate.bio,
+        gender: _userUpdate.gender,
+        birthday: _userUpdate.birthday,
+        status: _userUpdate.status,
+        avatarLink: _userUpdate.avatarLink,
+        backgroundLink: _userUpdate.backgroundLink,
+        friends: _userUpdate.friends,
+        phoneNumber: _account.phoneNumber,
+        warning:_userUpdate.warning,
+        imageLink: _conversations2.imageLink
+      };
+      res.status(200).json(_data);
+  } catch (error) {
+    return res.status(500).json({ msg: error });
+  }
+};
 //OKe
 exports.updateAvar = async (req, res, next) => {
   try {

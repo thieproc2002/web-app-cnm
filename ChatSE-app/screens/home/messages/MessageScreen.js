@@ -1,7 +1,7 @@
 import { ActivityIndicator, FlatList, KeyboardAvoidingView, Platform } from 'react-native';
 import { View, StyleSheet, Text } from 'react-native';
 import { useEffect, useState } from 'react';
-
+import Header from '../../../components/Header';
 import { useDispatch, useSelector } from 'react-redux';
 
 //import Header from '../../../components/Header';
@@ -53,7 +53,7 @@ function MessageScreen({ route, navigation }) {
     
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <KeyboardAvoidingView
                 behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
                 style={{ flex: 1 }}

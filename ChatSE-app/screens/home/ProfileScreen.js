@@ -16,13 +16,13 @@ const ProfileScreen = ({ navigation }) => {
     const settings = [
         {
             name: 'Đổi mật khẩu',
-            icon: 'key',
+            icon: 'exchange',
             key: 'zqsiEw',
             onPress: () => navigation.navigate('ReplacePassWord', { isChange: true, phoneNumber: userInfo.phoneNumber, userId: userInfo._id })
         },
         {
             name: 'Đăng xuất',
-            icon: 'logout',
+            icon: 'sign-out',
             key: 'iaT1Ex',
             onPress: () => setModalVisible(true)
         },
@@ -54,7 +54,7 @@ const ProfileScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            {/* <Header /> */}
+            <Header /> 
             <View style={styles.header}>
                 <Text style={styles.headerText}>TRANG CÁ NHÂN</Text>
             </View>

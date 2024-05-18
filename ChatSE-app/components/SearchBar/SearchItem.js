@@ -220,10 +220,10 @@ function SearchItem({
                     ) : isFriend ? (
                         <View style={styles.call}>
                             <TouchableOpacity>
-                                <Icon name="ios-call-outline" size={24} style={styles.icon} />
+                                <Icon name="call-outline" size={24} style={styles.icon} />
                             </TouchableOpacity>
                             <TouchableOpacity>
-                                <Icon name="md-videocam-outline" size={24} style={styles.icon} />
+                                <Icon name="videocam-outline" size={24} style={styles.icon} />
                             </TouchableOpacity>
                         </View>
                     ) : (

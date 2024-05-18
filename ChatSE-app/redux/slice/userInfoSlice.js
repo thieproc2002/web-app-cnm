@@ -178,16 +178,33 @@ export const fetchUpdateAvatarUsers = createAsyncThunk('info/fetchUpdateAvatarUs
 
 export const fetchUpdateBackgroundUsers = createAsyncThunk('info/fetchUpdateBackgroundUsers', async (data) => {
     try {
-        let dataForm;
-        dataForm = createFormDataUpdate(data.backLink, data.key);
+        const image = data.fileType.split('/');
+        const fileType = image[image.length - 1];
+        const response = await fetch(data.backLink);
+        const blob = await response.blob();
+        const filePath = `${data.userID}_${Date.now().toString()}.${fileType}`;
+        const s3 = new S3({
+            region: 'ap-southeast-1',
+            accessKeyId: 'AKIAQ3EGQ4KSN7VPGJ7H',
+            secretAccessKey: '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',
+          });
+          const paramsS3 = {
+            Bucket: 'zalo1',
+            Key: filePath,
+            Body: blob,
+            ContentType: data.fileType,
+            ContentLength: blob.size,
+          };    
+          const dataupdate = await s3.upload(paramsS3).promise();
+          let link = dataupdate.Location;
+          console.log('link: ',link);
 
-        const res = await fetch(`${config.LINK_API}/users/update-background/${data.userID}`, {
+        const res = await fetch(`${config.LINK_API}/users/update-background-app/${data.userID}`, {
             method: 'POST',
             headers: {
-                Accept: 'application/json',
-                'Content-Type': 'multipart/form-data',
+                'Content-Type': 'application/json',
             },
-            body: dataForm,
+            body: JSON.stringify({link}),
         });
 
         const background = await res.json();

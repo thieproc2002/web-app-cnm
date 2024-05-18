@@ -16,32 +16,32 @@ function PolicyScreen({ navigation }) {
 
             <ScrollView style={{ marginTop: 20, paddingHorizontal: 8 }}>
                 <View style={{ justifyContent: 'center', flex1: 1, alignItems: 'center' }}>
-                    <Text style={{ fontWeight: 'bold', fontSize: 23 }}>Chính sách sử dụng của MeChat</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 23 }}>Chính sách sử dụng của ChatSE</Text>
                     <Text style={styles.content}>
                         Các chính sách của chúng tôi đóng vai trò quan trọng trong việc duy trì trải nghiệm tích cực cho
-                        người dùng. Vui lòng tuân thủ các chính sách này khi sử dụng Mechat.
+                        người dùng. Vui lòng tuân thủ các chính sách này khi sử dụng ChatSE.
                     </Text>
 
                     <Text style={styles.textTitle}>Hành vi gian lận, lừa đảo và các hình thức lừa dối khác</Text>
                     <Text style={styles.content}>
-                        Không dùng ứng dụng Mechat cho mục đích lừa đảo. Không yêu cầu hoặc thu thập dữ liệu nhạy cảm,
-                        thông tin tài chính và số an sinh xã hội. Không dùng ứng dụng MeChat để lừa những người dùng
+                        Không dùng ứng dụng ChatSE cho mục đích lừa đảo. Không yêu cầu hoặc thu thập dữ liệu nhạy cảm,
+                        thông tin tài chính và số an sinh xã hội. Không dùng ứng dụng ChatSE để lừa những người dùng
                         khác chia sẻ thông tin vì những lý do bịa đặt. Không mạo danh người khác hoặc cung cấp thông tin
-                        không đúng về bản thân hoặc về nguồn gốc của tin nhắn hay cuộc gọi trong Mechat.
+                        không đúng về bản thân hoặc về nguồn gốc của tin nhắn hay cuộc gọi trong ChatSE.
                     </Text>
                     <Text style={styles.textTitle}>Hành vi quấy rối</Text>
                     <Text style={styles.content}>
-                        Không dùng ứng dụng MeChat để quấy rối, đe dọa hoặc dọa dẫm người khác. Không xúi giục người
+                        Không dùng ứng dụng ChatSE để quấy rối, đe dọa hoặc dọa dẫm người khác. Không xúi giục người
                         khác tham gia thực hiện hành vi này.
                     </Text>
                     <Text style={styles.textTitle}>Thông tin cá nhân và thông tin bí mật</Text>
                     <Text style={styles.content}>
-                        Không dùng ứng dụng MeChat để quấy rối, đe dọa hoặc dọa dẫm người khác. Không xúi giục người
+                        Không dùng ứng dụng ChatSE để quấy rối, đe dọa hoặc dọa dẫm người khác. Không xúi giục người
                         khác tham gia thực hiện hành vi này.
                     </Text>
                     <Text style={styles.textTitle}>Hoạt động bất hợp pháp</Text>
                     <Text style={styles.content}>
-                        Không dùng ứng dụng MeChat để quảng bá, tổ chức hoặc tham gia các hoạt động bất hợp pháp
+                        Không dùng ứng dụng ChatSE để quảng bá, tổ chức hoặc tham gia các hoạt động bất hợp pháp
                     </Text>
 
                     <Text style={[styles.textTitle, { textAlign: 'justify' }]}>

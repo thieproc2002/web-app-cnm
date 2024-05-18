@@ -148,7 +148,8 @@ function PersonalScreen({ route, navigation }) {
                 const data = {
                     key: 'backLink',
                     userID: infoSelf._id,
-                    backLink: result.uri,
+                    backLink: result.assets[0].uri,
+                    fileType: result.assets[0].mimeType,
                 };
                 dispatch(fetchUpdateBackgroundUsers(data));
             }
@@ -240,7 +241,7 @@ function PersonalScreen({ route, navigation }) {
                             >
                                 <Icon
                                     style={{ marginRight: 10 }}
-                                    name="ios-chatbubble-ellipses-outline"
+                                    name="chatbubble-ellipses-outline"
                                     color="#4F8ADC"
                                     size={25}
                                 />

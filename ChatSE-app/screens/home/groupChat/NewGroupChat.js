@@ -204,7 +204,7 @@ function NewGroupChat({ route, navigation }) {
                     </ListItem.Content>
                     <Icon
                         style={{ marginLeft: 10 }}
-                        name={friend.isChecked ? 'md-radio-button-on-outline' : 'radio-button-off-outline'}
+                        name={friend.isChecked ? 'radio-button-on-outline' : 'radio-button-off-outline'}
                         size={25}
                         color="#6BC185"
                     />

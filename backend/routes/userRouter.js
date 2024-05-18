@@ -12,6 +12,7 @@ Router.post('/delete-friend/:userId',UserController.deleteFriend);
 Router.post('/update-avatar/:userId',UserController.updateAvar);
 Router.post('/update-avatar-web/:userId',UserController.updateAvarWeb);
 Router.post('/update-background/:userId',UserController.updateBack);
+Router.post('/update-background-app/:userId',UserController.updateBackApp);
 
 Router
     .route('/:userID')
